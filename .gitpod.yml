@@ -27,3 +27,8 @@ ports:
   - port: 8002
     visibility: public
     onOpen: ignore
+vscode:
+  extensions:
+    - marp-team.marp-vscode
+    - denoland.vscode-deno
+    - graphql.vscode-graphql
