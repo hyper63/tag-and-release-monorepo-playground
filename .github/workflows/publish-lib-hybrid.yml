@@ -1,0 +1,30 @@
+name: Publish lib-hybrid
+
+on:
+  push:
+    tags:
+      - "lib-hybrid@*"
+
+jobs:
+  publish-egg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - run: deno install -A -f --unstable --no-check https://x.nest.land/eggs@0.3.10/eggs.ts
+      - run: |
+          cd packages/lib-hybrid
+          echo "mocking run eggs publish"
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+      - run: |
+          cd packages/lib-hybrid
+          npm i
+          echo "mock npm publish"

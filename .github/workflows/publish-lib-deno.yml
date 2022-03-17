@@ -1,0 +1,15 @@
+name: Publish Lib Deno
+
+on: 
+  push:
+    tags:
+      - 'lib-deno@*'
+
+jobs:
+  publish-egg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          cd packages/lib-deno
+          echo "some awesome deployment tasks"

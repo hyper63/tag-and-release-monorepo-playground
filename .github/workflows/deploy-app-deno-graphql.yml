@@ -1,0 +1,15 @@
+name: Deploy Deno App
+
+on: 
+  push:
+    tags:
+      - 'app-deno-graphql@*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          cd packages/app-deno-graphql
+          echo "some awesome deployment tasks"
