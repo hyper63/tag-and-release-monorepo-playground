@@ -1,0 +1,14 @@
+{
+  "name": "lib-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "uvu"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "uvu": "^0.5.3"
+  }
+}

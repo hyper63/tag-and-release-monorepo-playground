@@ -1,0 +1,26 @@
+image:
+  file: .gitpod.Dockerfile
+tasks:
+  - name: Start Remix
+    init: cd packages/app-remix && npm i
+    command: |
+      cd packages/app-remix
+      echo GRAPH_HOST=`gp url 8000` >> .env    
+      npm run dev
+  - name: Start Deno GraphQL
+    command: |
+      cd packages/app-deno-graphql
+      make dev
+ports:
+  # Deno GraphQL
+  - port: 8000
+    visibility: public
+    onOpen: ignore
+  # Remix App
+  - port: 3000
+    visibility: public
+    onOpen: ignore
+  # Remix HMR
+  - port: 8002
+    visibility: public
+    onOpen: ignore
