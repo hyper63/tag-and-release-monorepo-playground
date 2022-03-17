@@ -2,7 +2,10 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - name: Start Remix
-    init: cd packages/app-remix && npm i
+    init: |
+      cd packages/app-remix
+      npm i
+      cd ../../
     command: |
       cd packages/app-remix
       echo GRAPH_HOST=`gp url 8000` >> .env    
