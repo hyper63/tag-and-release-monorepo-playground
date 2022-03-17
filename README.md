@@ -3,6 +3,10 @@
 This repo demonstrates the `tag-and-release` dispatch workflow using the
 `hyper-ci-bump` Github Action.
 
+[Tag And Release](https://github.com/hyper63/.github/blob/main/workflow-templates/tag-and-release.yml)
+
+[hyper-ci-bump](https://github.com/hyper63/hyper-ci-bump)
+
 ## Motivation
 
 At hyper, we have a couple different repos:
