@@ -14,3 +14,5 @@ serve(async (req) => {
     ? graphql(req)
     : new Response('Not Found', { status: 404 })
 }, { port: 8000 });
+
+console.log("a new feature!")
